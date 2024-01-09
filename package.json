@@ -1,0 +1,32 @@
+{
+  "name": "2024-frameworkless-fe",
+  "version": "1.0.0",
+  "description": "2024 프레임워크 없는 프론트엔드 개발 스터디",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdsc-ssu/2024-frameworkless-FE.git"
+  },
+  "keywords": [],
+  "author": "2wndrhs@gmail.com",
+  "license": "ISC",
+  "homepage": "https://github.com/gdsc-ssu/2024-frameworkless-FE#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.1.1"
+  },
+  "engineStrict": true,
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0"
+  }
+}
