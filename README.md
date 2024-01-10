@@ -51,3 +51,20 @@ npm test
 ## 📒 스터디 진행기록
 
 [프레임워크 없는 프론트엔드 스터디 Project](https://github.com/orgs/gdsc-ssu/projects/8)
+
+## 스터디 참여자
+## 💻 Collaborators
+<p>
+<a href="https://github.com/2wndrhs">
+    <img src="https://github.com/2wndrhs.png" width="90">
+</a>
+<a href="https://github.com/SujinKim1127">
+    <img src="https://github.com/SujinKim1127.png" width="90">
+</a>
+<a href="https://github.com/fecapark">
+    <img src="https://github.com/fecapark.png" width="90">
+</a>
+<a href="https://github.com/JjungminLee">
+    <img src="https://github.com/JjungminLee.png" width="90">
+</a>
+</p>
