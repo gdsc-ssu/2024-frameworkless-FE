@@ -37,4 +37,4 @@
 
 ## 스터디 진행기록
 
-- 1주차
+📒 [프레임워크 없는 프론트엔드 스터디 Project](https://github.com/orgs/gdsc-ssu/projects/8)
