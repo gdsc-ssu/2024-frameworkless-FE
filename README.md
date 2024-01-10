@@ -2,11 +2,11 @@
 
 2024 [프레임워크 없는 프론트엔드 개발](https://product.kyobobook.co.kr/detail/S000001804992) 스터디를 위한 레포지토리입니다.
 
-## 스터디 목표
+## 🎯 스터디 목표
 
 프레임워크를 사용하는 이유인 렌더링, DOM, 라우팅, 상태 관리와 같은 프론트엔드 개발의 핵심 개념들을 근본적으로 이해하는 것을 목표로 합니다.
 
-## 스터디 진행방식
+## 🔍 스터디 진행방식
 
 [TDD](https://martinfowler.com/bliki/TestDrivenDevelopment.html) 개념을 차용하여 책에서 소개하는 개념에 대해서 실패하는 테스트 코드를 먼저 작성한 후 테스트를 통과시키기 위한 코드를 직접 짜고 이러한 해결 경험을 공유하는 방식으로 스터디를 진행합니다.
 
@@ -28,13 +28,26 @@
 
 > [GitHub - Apress/frameworkless-front-end-development: Source code for 'Frameworkless Front-End Development' by Francesco Strazzullo](https://github.com/Apress/frameworkless-front-end-development)
 
-## 스터디 진행시간
+## 📅 스터디 진행시간
 
 매주 토요일 12:00 ~ 에 오프라인 모임이 진행됩니다.
 
 - 코드 구현 기한: 매주 목요일 자정 전까지
 - 리뷰 기한: 매주 금요일 자정 전까지
 
-## 스터디 진행기록
+## 🧪 테스트 실행 가이드
+- 원활한 테스트 실행을 위해 `Node.js` 버전 `18.8.0` 이상이 필요합니다. ([Jest 라이브러리에서 ESModule 사용 관련](https://jestjs.io/docs/ecmascript-modules))
+- 다음 명령어를 입력해 패키지를 설치합니다.
 
-📒 [프레임워크 없는 프론트엔드 스터디 Project](https://github.com/orgs/gdsc-ssu/projects/8)
+```bash
+npm install
+```
+
+- 설치가 완료되었다면, 다음 명령어를 입력해 테스트를 실행합니다.
+```bash
+npm test
+```
+
+## 📒 스터디 진행기록
+
+[프레임워크 없는 프론트엔드 스터디 Project](https://github.com/orgs/gdsc-ssu/projects/8)
