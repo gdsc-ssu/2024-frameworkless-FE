@@ -52,7 +52,7 @@ npm test
 
 [프레임워크 없는 프론트엔드 스터디 Project](https://github.com/orgs/gdsc-ssu/projects/8)
 
-## 스터디 참여자
+## 🙏 스터디 참여자
 <p>
 <a href="https://github.com/2wndrhs">
     <img src="https://github.com/2wndrhs.png" width="90">
