@@ -66,4 +66,10 @@ npm test
 <a href="https://github.com/JjungminLee">
     <img src="https://github.com/JjungminLee.png" width="90">
 </a>
+<a href="https://github.com/Oilwoo">
+    <img src="https://github.com/Oilwoo.png" width="90">
+</a>
+<a href="https://github.com/Hanna922">
+    <img src="https://github.com/Hanna922.png" width="90">
+</a>
 </p>
