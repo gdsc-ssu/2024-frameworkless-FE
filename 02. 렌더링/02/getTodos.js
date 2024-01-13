@@ -7,7 +7,7 @@ const createElement = () => ({
 
 const repeat = (elementFactory, number) => {
   const array = [];
-  for (let index = 0; index < number; index++) {
+  for (let index = 0; index < number; index += 1) {
     array.push(elementFactory());
   }
   return array;
