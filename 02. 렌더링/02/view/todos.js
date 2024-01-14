@@ -1,4 +1,4 @@
-import { createInnerHTML } from './utils';
+import { createInnerHTML } from './utils.js';
 
 const getTodoItemElement = ({ text, completed }) => {
   const toggle = createInnerHTML('input', {
