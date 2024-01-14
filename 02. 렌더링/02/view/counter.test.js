@@ -44,4 +44,21 @@ describe('counterView', () => {
 
     expect(newCounter.textContent).toBe('1 Item left');
   });
+
+  test('전부 완료했을 때의 경우도 고려해야 한다.', () => {
+    const newCounter = counterView(targetElement, {
+      todos: [
+        {
+          text: 'First',
+          completed: true,
+        },
+        {
+          text: 'Third',
+          completed: true,
+        },
+      ],
+    });
+
+    expect(newCounter.textContent).toBe('No item left');
+  });
 });
