@@ -35,9 +35,15 @@ npm test
 
   - `index.html` 안에 렌더링 될 구성요소를 특정할 수 있도록 `data-component` 속성을 할당해보세요.
 
-- [ ] 프로그램 내부에서 `registry.js` 의 `add` 함수를 호출하여 렌더링할 컴포넌트를 미리 할당해주세요.
-
 - [ ] `applyDiff.js` 코드를 작성하고, 테스트를 통과해보세요.
+
+- [ ] 프로그램 내부에서 가상 DOM을 렌더링해보세요.
+
+  - `registry.js` 의 `add` 함수를 호출하여 렌더링할 컴포넌트들을 미리 할당해주세요.
+
+  - `registry.js` 의 `renderRoot` 함수를 호출하여 컴포넌트들을 가상 DOM에 렌더링하세요.
+
+  - `applyDiff.js` 에 작성한 코드를 호출하여 가상 DOM을 렌더링하세요.
 
 ## 덧붙임
 
