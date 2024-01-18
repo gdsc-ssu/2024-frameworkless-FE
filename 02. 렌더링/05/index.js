@@ -1,5 +1,4 @@
 import getTodos from './getTodos.js';
-import appView from './view/app.js';
 
 const state = {
   todos: getTodos(),
@@ -9,6 +8,7 @@ const state = {
 const main = document.querySelector('.todoapp');
 
 window.requestAnimationFrame(() => {
-  const newMain = appView(main, state);
-  main.replaceWith(newMain);
+  // appView() 대신 registry.js 의 코드를 활용해보세요.
+  // const newMain = appView(main, state);
+  // main.replaceWith(newMain);
 });

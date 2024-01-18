@@ -21,13 +21,17 @@ npm test
 - [ ] `index.js` 에 일정 시간마다 상태를 무작위로 변경하고, 다시 렌더링을 하는 로직을 작성해보세요.
 
   - 무작위로 변경된 상태의 값은 자유롭되, 타입은
+
     ```ts
     {
       todos: Array<{ text: string; completed: boolean }>;
       currentFilter: string;
     }
     ```
+
     을 지켜주세요.
+
+  - 기존의 `appView()` 함수 대신, `registry.js` 에 작성된 코드를 활용해서 렌더링을 진행해보세요.
 
 - [ ] `registry.js` 코드를 작성하고, 테스트를 통과해보세요.
 
