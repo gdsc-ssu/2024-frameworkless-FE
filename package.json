@@ -4,6 +4,7 @@
   "description": "2024 프레임워크 없는 프론트엔드 개발 스터디",
   "type": "module",
   "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:2wndrhs": "node --experimental-vm-modules node_modules/jest/bin/jest.js 2wndrhs",
     "test:Hanna": "node --experimental-vm-modules node_modules/jest/bin/jest.js Hanna",
     "test:fecapark": "node --experimental-vm-modules node_modules/jest/bin/jest.js fecapark",
