@@ -5,6 +5,11 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:2wndrhs": "node --experimental-vm-modules node_modules/jest/bin/jest.js 2wndrhs",
+    "test:Hanna": "node --experimental-vm-modules node_modules/jest/bin/jest.js Hanna",
+    "test:fecapark": "node --experimental-vm-modules node_modules/jest/bin/jest.js fecapark",
+    "test:SujinKim1127": "node --experimental-vm-modules node_modules/jest/bin/jest.js SujinKim1127",
+    "test:ilwoo": "node --experimental-vm-modules node_modules/jest/bin/jest.js ilwoo",
     "prepare": "husky install"
   },
   "repository": {
