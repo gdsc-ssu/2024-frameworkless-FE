@@ -23,5 +23,6 @@ module.exports = {
   },
   rules: {
     'import/extensions': 'off',
+    'no-plusplus': 'off',
   },
 };
