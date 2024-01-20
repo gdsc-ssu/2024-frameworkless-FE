@@ -1,0 +1,11 @@
+{
+  "name": "hanna-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "jest": "^27.0.0"
+  }
+}
