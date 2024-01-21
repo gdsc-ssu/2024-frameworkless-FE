@@ -39,7 +39,7 @@ npm test
 
   - `index.html` 안에 렌더링 될 구성요소를 특정할 수 있도록 `data-component` 속성을 할당해보세요.
 
-- [ ] `isNodeChange.js` 코드를 작성하고, 테스트를 통과해보세요.
+- [x] `isNodeChange.js` 코드를 작성하고, 테스트를 통과해보세요.
 
 - [ ] `applyDiff.js` 코드를 작성하고, 테스트를 통과해보세요.
 
