@@ -41,7 +41,7 @@ npm test
 
 - [x] `isNodeChange.js` 코드를 작성하고, 테스트를 통과해보세요.
 
-- [ ] `applyDiff.js` 코드를 작성하고, 테스트를 통과해보세요.
+- [x] `applyDiff.js` 코드를 작성하고, 테스트를 통과해보세요.
 
   - `isNodeChange.js` 에 작성한 모듈을 활용해보세요.
 
