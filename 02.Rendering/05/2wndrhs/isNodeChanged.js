@@ -11,8 +11,12 @@ const isNodeChanged = (node1, node2) => {
   if (hasDifferentAttributes) {
     return true;
   }
-  // 두 노드가 다른 텍스트 컨텐츠를 가지면 true 반환
-  if (node1.textContent !== node2.textContent) {
+  // 두 노드의 자식 노드가 없고 다른 텍스트 컨텐츠를 가지면 true 반환
+  if (
+    node1.children.length === 0 &&
+    node2.children.length === 0 &&
+    node1.textContent !== node2.textContent
+  ) {
     return true;
   }
 
