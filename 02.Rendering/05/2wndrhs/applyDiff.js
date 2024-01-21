@@ -1,4 +1,4 @@
-import isNodeChanged from './isNodeChanged';
+import isNodeChanged from './isNodeChanged.js';
 
 const applyDiff = (parentNode, realNode, virtualNode) => {
   if (realNode && !virtualNode) {
