@@ -33,7 +33,7 @@ npm test
 
   - 기존의 `appView()` 함수 대신, `registry.js` 에 작성된 코드를 활용해서 렌더링을 진행해보세요.
 
-- [ ] `registry.js` 코드를 작성하고, 테스트를 통과해보세요.
+- [x] `registry.js` 코드를 작성하고, 테스트를 통과해보세요.
 
   - 캡슐화를 위하여 `registry` 변수는 export 하지 말아주세요.
 
