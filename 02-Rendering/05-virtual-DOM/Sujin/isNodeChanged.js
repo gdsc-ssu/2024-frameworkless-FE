@@ -19,11 +19,11 @@ const isNodeChanged = (node1, node2) => {
     return true;
   }
 
-  
-  if (    // 노드에는 자식이 없으며
+  if (
+    // 노드에는 자식이 없으며
     node1.children.length === 0 &&
     node2.children.length === 0 &&
-    node1.textContent !== node2.textContent   // textContent가 다르다
+    node1.textContent !== node2.textContent // textContent가 다르다
   ) {
     return true;
   }
