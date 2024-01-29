@@ -5,7 +5,7 @@ const createNewTodoNode = () => {
     template = document.getElementById('todo-item');
   }
 
-  return template.content.cloneNode(true);
+  return template.content.firstElementChild.cloneNode(true);
 };
 
 const getTodoElement = (todo) => {
