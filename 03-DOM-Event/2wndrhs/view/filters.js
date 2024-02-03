@@ -1,11 +1,23 @@
-export default (targetElement, { currentFilter }) => {
-  const newCounter = targetElement.cloneNode(true);
-  Array.from(newCounter.querySelectorAll('li a')).forEach((a) => {
+const addEvents = (targetElement, events) => {
+  const { changeFilter } = events;
+
+  targetElement.addEventListener('click', (event) => {
+    changeFilter(event.target.textContent);
+  });
+};
+
+export default (targetElement, { currentFilter }, events) => {
+  const newFilters = targetElement.cloneNode(true);
+
+  Array.from(newFilters.querySelectorAll('li a')).forEach((a) => {
     if (a.textContent === currentFilter) {
       a.classList.add('selected');
     } else {
       a.classList.remove('selected');
     }
   });
-  return newCounter;
+
+  addEvents(newFilters, events);
+
+  return newFilters;
 };

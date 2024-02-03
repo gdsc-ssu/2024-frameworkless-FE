@@ -54,12 +54,25 @@ const getTodoElement = (todo, todoIndex, events) => {
   return element;
 };
 
-export default (targetElement, { todos }, events) => {
+const filterTodos = (todo, currentFilter) => {
+  if (currentFilter === 'All') {
+    return true;
+  }
+
+  if (currentFilter === 'Active') {
+    return !todo.completed;
+  }
+
+  return todo.completed;
+};
+
+export default (targetElement, { todos, currentFilter }, events) => {
   const newTodoList = targetElement.cloneNode(true);
 
   newTodoList.innerHTML = '';
 
   todos
+    .filter((todo) => filterTodos(todo, currentFilter))
     .map((todo, todoIndex) => getTodoElement(todo, todoIndex, events))
     .forEach((element) => {
       newTodoList.appendChild(element);

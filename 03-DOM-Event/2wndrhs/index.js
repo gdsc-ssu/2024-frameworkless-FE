@@ -51,7 +51,11 @@ export const events = {
 
     render();
   },
-  changeFilter() {},
+  changeFilter(filter) {
+    state.currentFilter = filter;
+
+    render();
+  },
 };
 
 export const render = () => {
