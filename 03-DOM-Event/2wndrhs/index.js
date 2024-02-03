@@ -31,7 +31,11 @@ export const events = {
 
     render();
   },
-  deleteItem() {},
+  deleteItem(todoIndex) {
+    state.todos.splice(todoIndex, 1);
+
+    render();
+  },
   toggleItemCompleted() {},
   completeAll() {},
   clearCompleted() {},

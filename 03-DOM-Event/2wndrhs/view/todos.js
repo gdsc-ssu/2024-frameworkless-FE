@@ -9,9 +9,10 @@ const createNewTodoNode = () => {
 };
 
 const addEvents = (targetElement, todoIndex, events) => {
-  const { updateItem } = events;
+  const { updateItem, deleteItem } = events;
 
   const editInput = targetElement.querySelector('input.edit');
+  const destroyButton = targetElement.querySelector('button.destroy');
 
   targetElement.addEventListener('dblclick', () => {
     targetElement.classList.add('editing');
@@ -23,6 +24,10 @@ const addEvents = (targetElement, todoIndex, events) => {
       updateItem(event.target.value, todoIndex);
       targetElement.classList.remove('editing');
     }
+  });
+
+  destroyButton.addEventListener('click', () => {
+    deleteItem(todoIndex);
   });
 };
 
