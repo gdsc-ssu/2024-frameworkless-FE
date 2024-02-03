@@ -36,7 +36,11 @@ export const events = {
 
     render();
   },
-  toggleItemCompleted() {},
+  toggleItemCompleted(todoIndex) {
+    state.todos[todoIndex].completed = !state.todos[todoIndex].completed;
+
+    render();
+  },
   completeAll() {},
   clearCompleted() {},
   changeFilter() {},
