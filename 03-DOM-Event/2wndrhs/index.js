@@ -41,7 +41,11 @@ export const events = {
 
     render();
   },
-  completeAll() {},
+  completeAll() {
+    state.todos = state.todos.map((todo) => ({ ...todo, completed: true }));
+
+    render();
+  },
   clearCompleted() {},
   changeFilter() {},
 };

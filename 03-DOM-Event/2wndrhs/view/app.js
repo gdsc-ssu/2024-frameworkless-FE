@@ -9,16 +9,20 @@ const createAppElement = () => {
 };
 
 const addEvents = (targetElement, events) => {
-  const { addItem } = events;
+  const { addItem, completeAll } = events;
 
   const newTodoInput = targetElement.querySelector('.new-todo');
+  const toggleAllInput = targetElement.querySelector('.toggle-all');
 
   newTodoInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-      console.log(event.target.value);
       addItem(event.target.value);
       newTodoInput.value = '';
     }
+  });
+
+  toggleAllInput.addEventListener('click', () => {
+    completeAll();
   });
 };
 
