@@ -26,7 +26,11 @@ export const events = {
 
     render();
   },
-  updateItem() {},
+  updateItem(text, todoIndex) {
+    state.todos[todoIndex].text = text;
+
+    render();
+  },
   deleteItem() {},
   toggleItemCompleted() {},
   completeAll() {},
