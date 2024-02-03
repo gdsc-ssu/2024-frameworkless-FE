@@ -9,10 +9,11 @@ const createAppElement = () => {
 };
 
 const addEvents = (targetElement, events) => {
-  const { addItem, completeAll } = events;
+  const { addItem, completeAll, clearCompleted } = events;
 
   const newTodoInput = targetElement.querySelector('.new-todo');
   const toggleAllInput = targetElement.querySelector('.toggle-all');
+  const clearCompletedButton = targetElement.querySelector('.clear-completed');
 
   newTodoInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
@@ -23,6 +24,10 @@ const addEvents = (targetElement, events) => {
 
   toggleAllInput.addEventListener('click', () => {
     completeAll();
+  });
+
+  clearCompletedButton.addEventListener('click', () => {
+    clearCompleted();
   });
 };
 
