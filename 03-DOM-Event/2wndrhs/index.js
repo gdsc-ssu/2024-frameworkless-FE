@@ -18,20 +18,27 @@ export const state = {
 };
 
 export const events = {
-  addItem: () => {},
-  updateItem: () => {},
-  deleteItem: () => {},
-  toggleItemCompleted: () => {},
-  completeAll: () => {},
-  clearCompleted: () => {},
-  changeFilter: () => {},
+  addItem(text) {
+    state.todos.push({
+      text,
+      completed: false,
+    });
+
+    render();
+  },
+  updateItem() {},
+  deleteItem() {},
+  toggleItemCompleted() {},
+  completeAll() {},
+  clearCompleted() {},
+  changeFilter() {},
 };
 
 export const render = () => {
   window.requestAnimationFrame(() => {
     const main = document.querySelector('#root');
 
-    const newMain = registry.renderRoot(main, state);
+    const newMain = registry.renderRoot(main, state, events);
 
     applyDiff(document.body, main, newMain);
   });
