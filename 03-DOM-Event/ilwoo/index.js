@@ -18,7 +18,9 @@ export const state = {
 };
 
 export const events = {
-  addItem: () => {},
+  addItem: () => {
+    
+  },
   updateItem: () => {},
   deleteItem: () => {},
   toggleItemCompleted: () => {},

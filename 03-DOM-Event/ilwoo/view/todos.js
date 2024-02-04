@@ -30,6 +30,8 @@ export default (targetElement, { todos }) => {
 
   newTodoList.innerHTML = '';
 
+  console.log(newTodoList);
+
   todos.map(getTodoElement).forEach((element) => {
     newTodoList.appendChild(element);
   });
