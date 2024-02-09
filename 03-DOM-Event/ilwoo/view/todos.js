@@ -25,8 +25,6 @@ const getTodoElement = (todo, index) => {
     element.querySelector('input.toggle').checked = true;
   }
 
-  const handler = e => events.deleteItem(index);
-  element.querySelector('button.destroy').addEventListener('click', handler);
 
   return element;
 };
@@ -48,6 +46,15 @@ export default (targetElement, state, events) => {
       deleteItem(e.target.dataset.index)
     }
   })
+
+  newTodoList.addEventListener('dblclick', e => {
+    if (e.target.matches('label')) {
+      e.target.classList.add('editing');
+      e.target.focus();
+      console.log(e.target);
+    }
+  })
+
 
   return newTodoList;
 };

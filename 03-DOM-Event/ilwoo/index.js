@@ -24,7 +24,10 @@ export const events = {
     })
     render();
   },
-  updateItem: () => {},
+  updateItem: (index, text) => {
+    state.todos[index].text = text;
+    render();
+  },
   deleteItem: (index) => {
     state.todos.splice(index, 1);//해당인덱스에서 1개를 제거
     render();

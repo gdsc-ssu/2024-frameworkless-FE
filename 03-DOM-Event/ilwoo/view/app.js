@@ -19,7 +19,7 @@ const addEvents = (targetElement, events) => {
         events.addItem(e.target.value)
         e.target.value = ''
       }
-    })
+    });
 }
 
 export default (targetElement, state, events) => {
