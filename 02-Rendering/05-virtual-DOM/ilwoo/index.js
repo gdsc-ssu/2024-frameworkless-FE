@@ -7,6 +7,7 @@ import { add, renderRoot } from './registry.js';
 
 const filters = ['All', 'Active', 'Completed'];
 
+// registy.js에 있는 add 함수를 이용해서 todos, counter, filters를 등록
 add('todos', todosView);
 add('counter', counterView);
 add('filters', filtersView);
@@ -16,15 +17,14 @@ const state = {
   currentFilter: 'All',
 };
 
-const main = document.querySelector('.todoapp');
+
 
 const render = () =>
   window.requestAnimationFrame(() => {
+    const main = document.querySelector('.todoapp');
     const newMain = renderRoot(main, state);
     applyDiff(document.body, main, newMain);
-    // appView() 대신 registry.js 의 코드를 활용해보세요.
-    // const newMain = appView(main, state);
-    // main.replaceWith(newMain);
+    //applyDiff는 현재노드와 가상DOM 노드를 비교해서 변경된 부분만 업데이트하는 함수
   });
 
 window.setInterval(() => {

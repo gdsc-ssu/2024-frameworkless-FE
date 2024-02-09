@@ -1,6 +1,6 @@
 const registry = {}; // export 하지 말아주세요!
 
-// renderWrapper 함수가 반환하는 함수는 클로저가 되어 component 함수를 기억
+//renderWrapper의 호출결과는 component 
 const renderWrapper = (component) => (targetElement, state) => {
   const element = component(targetElement, state);
 
@@ -16,15 +16,19 @@ const renderWrapper = (component) => (targetElement, state) => {
 
   return element;
 };
-
+// name = {todos, counter, filters}, component = todosView, counterView, filtersView
 const add = (name, component) => {
   registry[name] = renderWrapper(component);
+  //registry = {todos: renderWrapper(todosView), counter: renderWrapper(counterView), filters: renderWrapper(filtersView)}
+  //registry 딕셔너리 변수에 각 renderWrapper 함수를 맵핑
 };
 
 const renderRoot = (root, state) => {
+  //root = main 엘리먼트, state = {todos: getTodos(), currentFilter: 'All'}
   const cloneComponent = (target) => target.cloneNode(true);
 
   return renderWrapper(cloneComponent)(root, state);
+  //복사된 컴포넌트 
 };
 
 export { add, renderRoot };

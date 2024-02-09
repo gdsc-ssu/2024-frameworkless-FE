@@ -8,8 +8,11 @@ const createNewTodoNode = () => {
   return template.content.firstElementChild.cloneNode(true);
 };
 
-const getTodoElement = (todo) => {
+const getTodoElement = (todo, index) => {
   const { text, completed } = todo;
+  //구조분해 할당을 사용하여 text와 completed를 가져옴
+  //const text = todo.text;
+  //const completed = todo.completed;
 
   const element = createNewTodoNode();
 
@@ -22,19 +25,29 @@ const getTodoElement = (todo) => {
     element.querySelector('input.toggle').checked = true;
   }
 
+  const handler = e => events.deleteItem(index);
+  element.querySelector('button.destroy').addEventListener('click', handler);
+
   return element;
 };
 
-export default (targetElement, { todos }) => {
-  const newTodoList = targetElement.cloneNode(true);
+export default (targetElement, state, events) => {
+  const { todos } = state
+  const { deleteItem } = events
+  const newTodoList = targetElement.cloneNode(true)
 
-  newTodoList.innerHTML = '';
+  newTodoList.innerHTML = ''
 
-  console.log(newTodoList);
+  todos.map((todo, index) => getTodoElement(todo, index))
+    .forEach(element => {
+      newTodoList.appendChild(element)
+    })
 
-  todos.map(getTodoElement).forEach((element) => {
-    newTodoList.appendChild(element);
-  });
+  newTodoList.addEventListener('click', e => {
+    if (e.target.matches('button.destroy')) {
+      deleteItem(e.target.dataset.index)
+    }
+  })
 
   return newTodoList;
 };
