@@ -24,14 +24,16 @@ const getTodoElement = (todo, index) => {
 
     element.querySelector('input.toggle').checked = true;
   }
-
+  
+  //이벤트 활용
+  element.dataset.index = index;
 
   return element;
 };
 
 export default (targetElement, state, events) => {
   const { todos } = state
-  const { deleteItem } = events
+  const { deleteItem, updateItem } = events
   const newTodoList = targetElement.cloneNode(true)
 
   newTodoList.innerHTML = ''
@@ -43,15 +45,21 @@ export default (targetElement, state, events) => {
 
   newTodoList.addEventListener('click', e => {
     if (e.target.matches('button.destroy')) {
-      deleteItem(e.target.dataset.index)
+      deleteItem(e.target.closest('li').dataset.index)
     }
   })
 
   newTodoList.addEventListener('dblclick', e => {
     if (e.target.matches('label')) {
-      e.target.classList.add('editing');
-      e.target.focus();
-      console.log(e.target);
+      e.target.closest('li').classList.add('editing')
+      e.target.closest('li').querySelector('input.edit').focus()
+    }
+  })
+
+  newTodoList.addEventListener('keydown', e => {
+    if (e.target.matches('input.edit') && e.key === 'Enter') {
+        e.target.closest('li').classList.remove('editing')
+        updateItem(e.target.closest('li').dataset.index, e.target.value)
     }
   })
 
