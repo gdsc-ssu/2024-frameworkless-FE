@@ -36,7 +36,10 @@ export const events = {
     state.todos[index].completed = !state.todos[index].completed;
     render();
   },
-  completeAll: () => {},
+  completeAll: () => {
+    state.todos.forEach(todo => todo.completed = true);
+    render();
+  },
   clearCompleted: () => {},
   changeFilter: () => {},
 };

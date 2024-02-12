@@ -20,6 +20,12 @@ const addEvents = (targetElement, events) => {
         e.target.value = ''
       }
     });
+
+  targetElement
+    .querySelector('.toggle-all')
+    .addEventListener('click', e => {
+      events.completeAll()
+    });
 }
 
 export default (targetElement, state, events) => {
