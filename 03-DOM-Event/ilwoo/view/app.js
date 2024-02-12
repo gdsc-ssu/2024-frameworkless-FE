@@ -26,6 +26,12 @@ const addEvents = (targetElement, events) => {
     .addEventListener('click', e => {
       events.completeAll()
     });
+
+  targetElement
+    .querySelector('.clear-completed')
+    .addEventListener('click', e => {
+      events.clearCompleted()
+    });
 }
 
 export default (targetElement, state, events) => {

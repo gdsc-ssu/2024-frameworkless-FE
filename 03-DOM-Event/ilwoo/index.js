@@ -40,7 +40,10 @@ export const events = {
     state.todos.forEach(todo => todo.completed = true);
     render();
   },
-  clearCompleted: () => {},
+  clearCompleted: () => {
+    state.todos = state.todos.filter(todo => !todo.completed);
+    render();
+  },
   changeFilter: () => {},
 };
 
