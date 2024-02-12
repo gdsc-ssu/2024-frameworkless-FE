@@ -1,4 +1,4 @@
-export default (targetElement, { currentFilter }) => {
+export default (targetElement, { currentFilter }, events) => {
   const newCounter = targetElement.cloneNode(true);
   Array.from(newCounter.querySelectorAll('li a')).forEach((a) => {
     if (a.textContent === currentFilter) {
@@ -7,5 +7,10 @@ export default (targetElement, { currentFilter }) => {
       a.classList.remove('selected');
     }
   });
+
+  newCounter.addEventListener('click', (e) => {
+    events.changeFilter(e.target.textContent);
+  });
+
   return newCounter;
 };

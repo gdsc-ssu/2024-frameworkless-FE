@@ -26,6 +26,7 @@ const getTodoElement = (todo, index, events) => {
   }
 
   //리스트에 위임해서 처리해보기
+  //각 엘리먼트마다 events를 부여하지 않고 리스트 자체에 걸기
   //리스트가 길어질 경우에는 성능과 메모리 사용성을 개선시킬 수 있음.
   /*
   const handler = e => events.toggleItemCompleted(index);
@@ -37,17 +38,29 @@ const getTodoElement = (todo, index, events) => {
   return element;
 };
 
+const filterTodo = (todo, currentFilter) => {
+  if (currentFilter === 'All') {
+    return true;
+  } else if (currentFilter === 'Active') {
+    return !todo.completed;
+  } else if (currentFilter === 'Completed') {
+    return todo.completed;
+  }
+}
+
 export default (targetElement, state, events) => {
-  const { todos } = state
+  const { todos, currentFilter } = state
   const { deleteItem, updateItem, toggleItemCompleted } = events
   const newTodoList = targetElement.cloneNode(true)
 
   newTodoList.innerHTML = ''
 
-  todos.map((todo, index) => getTodoElement(todo, index))
-    .forEach(element => {
-      newTodoList.appendChild(element)
-    })
+  todos.filter(todo => filterTodo(todo, currentFilter))
+  .map((todo, index) => getTodoElement(todo, index, events))
+  .forEach(element => {
+    newTodoList.appendChild(element)
+  })
+
 
   newTodoList.addEventListener('click', e => {
     if (e.target.matches('button.destroy')) {
@@ -70,6 +83,8 @@ export default (targetElement, state, events) => {
         updateItem(e.target.closest('li').dataset.index, e.target.value)
     }
   })
+
+
 
 
   return newTodoList;

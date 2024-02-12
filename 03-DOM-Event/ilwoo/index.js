@@ -44,7 +44,10 @@ export const events = {
     state.todos = state.todos.filter(todo => !todo.completed);
     render();
   },
-  changeFilter: () => {},
+  changeFilter: (filter) => {
+    state.currentFilter = filter;
+    render();
+  },
 };
 
 export const render = () => {
