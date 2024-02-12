@@ -32,7 +32,10 @@ export const events = {
     state.todos.splice(index, 1);//해당인덱스에서 1개를 제거
     render();
   },
-  toggleItemCompleted: () => {},
+  toggleItemCompleted: (index) => {
+    state.todos[index].completed = !state.todos[index].completed;
+    render();
+  },
   completeAll: () => {},
   clearCompleted: () => {},
   changeFilter: () => {},
