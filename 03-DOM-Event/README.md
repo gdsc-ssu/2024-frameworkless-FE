@@ -28,25 +28,25 @@ graph LR;
 
 ## 구현 가이드
 
-- [ ] `index.js`의 `event` 객체에 올바른 이벤트 핸들러를 작성해주세요.
+- [x] `index.js`의 `event` 객체에 올바른 이벤트 핸들러를 작성해주세요.
 
   - 각 이벤트 핸들러는 사용자의 이벤트가 발생하면 상태를 업데이트하고 다시 렌더링을 진행합니다.
 
-- [ ] `event` 객체에 작성한 이벤트 핸들러를 올바른 DOM 요소에 연결해주세요.
+- [x] `event` 객체에 작성한 이벤트 핸들러를 올바른 DOM 요소에 연결해주세요.
 
-  - [ ] `addItem`, `completeAll`, `clearCompleted` 핸들러는 `app.js` 구성 요소에 연결해야 합니다.
-  - [ ] `changeFilter` 핸들러는 `filters.js` 구성 요소에 연결해야 합니다.
-  - [ ] `deleteItem`, `toggleItemCompleted`, `updateItem` 핸들러는 `todos.js` 구성 요소에 연결해야 합니다.
+  - [x] `addItem`, `completeAll`, `clearCompleted` 핸들러는 `app.js` 구성 요소에 연결해야 합니다.
+  - [x] `changeFilter` 핸들러는 `filters.js` 구성 요소에 연결해야 합니다.
+  - [x] `deleteItem`, `toggleItemCompleted`, `updateItem` 핸들러는 `todos.js` 구성 요소에 연결해야 합니다.
 
-- [ ] 상태에 따라 올바른 DOM 요소를 반환할 수 있도록 구성 요소를 수정해주세요.
+- [x] 상태에 따라 올바른 DOM 요소를 반환할 수 있도록 구성 요소를 수정해주세요.
 
   - `app.js` 구성 요소
 
-    - [ ] 완료하지 않은 Todo 항목이 있다면 `Clear completed` 레이블이 보이지 않아야 합니다.
-    - [ ] 왼쪽 상단 모서리에 있는 V 표시를 클릭하면 V 표시가 체크되어야 합니다.
+    - [x] 완료하지 않은 Todo 항목이 있다면 `Clear completed` 레이블이 보이지 않아야 합니다.
+    - [x] 왼쪽 상단 모서리에 있는 V 표시를 클릭하면 V 표시가 체크되어야 합니다.
 
   - `todos.js` 구성 요소
-    - [ ] `currentFilter` 상태에 따라 올바른 Todo 항목만을 반환해야 합니다.
+    - [x] `currentFilter` 상태에 따라 올바른 Todo 항목만을 반환해야 합니다.
 
 ## 덧붙임
 
