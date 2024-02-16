@@ -26,6 +26,11 @@ const getGitHubAvatarUrl = async (user) => {
 };
 
 export default class GitHubAvatar extends HTMLElement {
+  constructor() {
+    super();
+    this.url = LOADING_IMAGE;
+  }
+
   get user() {
     return this.getAttribute('user');
   }
@@ -36,16 +41,22 @@ export default class GitHubAvatar extends HTMLElement {
 
   render() {
     window.requestAnimationFrame(() => {
-      this.innerHTML = `
-        <img
-          src="${LOADING_IMAGE}"
-          alt="GitHub Avatar"
-        />
-      `;
+      this.innerHTML = `<img src="${this.url}" alt="GitHub Avatar" />`;
     });
+  }
+
+  async loadAvatar() {
+    try {
+      this.url = await getGitHubAvatarUrl(this.user);
+    } catch (error) {
+      this.url = ERROR_IMAGE;
+    }
+
+    this.render();
   }
 
   connectedCallback() {
     this.render();
+    this.loadAvatar();
   }
 }

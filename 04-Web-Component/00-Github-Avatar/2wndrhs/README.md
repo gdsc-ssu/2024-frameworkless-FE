@@ -17,9 +17,9 @@ graph TD;
 - [ ] `components/GitHubAvatar.js` 파일의 `GitHubAvatar` Custom Element Class를 완성해주세요.
 
   - [x] `user` 속성이 마크업과 동기화 될 수 있도록 getter/setter를 이용해 관리해야합니다.
-  - [ ] `connectedCallback()` 라이프 사이클 메서드에서는 `img` 요소를 렌더링하고 GitHub API에 요청을 보내야 합니다.
+  - [x] `connectedCallback()` 라이프 사이클 메서드에서는 `img` 요소를 렌더링하고 GitHub API에 요청을 보내야 합니다.
 
-- [ ] GitHub API 요청 결과에 따라 `GitHubAvatar` 구성 요소의 컨텐츠가 달라져야 합니다.
+- [x] GitHub API 요청 결과에 따라 `GitHubAvatar` 구성 요소의 컨텐츠가 달라져야 합니다.
 
   - API 요청 전
 
@@ -27,10 +27,10 @@ graph TD;
 
   - API 요청 성공 시
 
-    - [ ] GitHub API 응답 결과인 `avatar_url`을 이용하여 사용자 아바타를 표시합니다.
+    - [x] GitHub API 응답 결과인 `avatar_url`을 이용하여 사용자 아바타를 표시합니다.
 
   - API 요청 실패 시
-    - [ ] 미리 주어진 `ERROR_IMAGE` 아이콘을 표시합니다.
+    - [x] 미리 주어진 `ERROR_IMAGE` 아이콘을 표시합니다.
 
 - [ ] GitHub API 요청 결과에 따라 커스텀 이벤트가 발생해야 합니다.
 
