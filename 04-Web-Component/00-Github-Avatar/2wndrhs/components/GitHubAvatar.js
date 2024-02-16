@@ -25,4 +25,12 @@ const getGitHubAvatarUrl = async (user) => {
   return data.avatar_url;
 };
 
-export default class GitHubAvatar extends HTMLElement {}
+export default class GitHubAvatar extends HTMLElement {
+  get user() {
+    return this.getAttribute('user');
+  }
+
+  set user(value) {
+    this.setAttribute('user', value);
+  }
+}
