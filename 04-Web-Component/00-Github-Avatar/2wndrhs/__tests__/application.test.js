@@ -90,4 +90,43 @@ describe('GitHubAvatar', () => {
     const img = element.querySelector('img');
     expect(img.src).toBe(ERROR_IMAGE);
   });
+
+  it('`user` 속성이 변경되면 img 요소의 src 속성이 변경되어야 한다', async () => {
+    let mockUser = 'mockUser';
+    let mockAvatarUrl = 'https://mock.url/avatar.png';
+
+    // avatar_url을 반환하는 fetch를 모킹
+    global.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ avatar_url: mockAvatarUrl }),
+      }),
+    );
+
+    // user 속성을 설정
+    element.user = mockUser;
+    element.connectedCallback();
+
+    // 모든 비동기 작업이 완료될 때까지 대기
+    await new Promise((resolve) => {
+      setTimeout(resolve, 0);
+    });
+
+    mockUser = 'newMockUser';
+    mockAvatarUrl = 'https://mock.url/newAvatar.png';
+
+    // user 속성을 변경
+    element.user = mockUser;
+    element.connectedCallback();
+
+    // 모든 비동기 작업이 완료될 때까지 대기
+    await new Promise((resolve) => {
+      setTimeout(resolve, 0);
+    });
+
+    // img 요소의 src 속성이 변경되었는지 확인
+    const img = element.querySelector('img');
+    expect(element.getAttribute('user')).toBe(mockUser);
+    expect(img.src).toBe(mockAvatarUrl);
+  });
 });
