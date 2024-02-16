@@ -39,6 +39,16 @@ export default class GitHubAvatar extends HTMLElement {
     this.setAttribute('user', value);
   }
 
+  onAvatarLoadComplete() {
+    this.dispatchEvent(
+      new CustomEvent(AVATAR_LOAD_COMPLETE, {
+        detail: {
+          avatar: this.url,
+        },
+      }),
+    );
+  }
+
   render() {
     window.requestAnimationFrame(() => {
       this.innerHTML = `<img src="${this.url}" alt="GitHub Avatar" />`;
@@ -48,6 +58,7 @@ export default class GitHubAvatar extends HTMLElement {
   async loadAvatar() {
     try {
       this.url = await getGitHubAvatarUrl(this.user);
+      this.onAvatarLoadComplete();
     } catch (error) {
       this.url = ERROR_IMAGE;
     }

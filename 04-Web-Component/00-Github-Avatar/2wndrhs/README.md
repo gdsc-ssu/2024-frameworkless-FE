@@ -36,8 +36,8 @@ graph TD;
 
   - API 요청 성공 시
 
-    - [ ] `AVATAR_LOAD_COMPLETE` 커스텀 이벤트를 발생시킵니다.
-    - [ ] 커스텀 이벤트 생성 시 `avatar_url`을 추가적인 데이터로 전달합니다.
+    - [x] `AVATAR_LOAD_COMPLETE` 커스텀 이벤트를 발생시킵니다.
+    - [x] 커스텀 이벤트 생성 시 `avatar_url`을 추가적인 데이터로 전달합니다.
 
   - API 요청 실패 시
     - [ ] `AVATAR_LOAD_ERROR` 커스텀 이벤트를 발생시킵니다.
