@@ -23,7 +23,7 @@ graph TD;
 
   - API 요청 전
 
-    - [ ] 미리 주어진 `LOADING_IMAGE` 아이콘을 표시합니다.
+    - [x] 미리 주어진 `LOADING_IMAGE` 아이콘을 표시합니다.
 
   - API 요청 성공 시
 

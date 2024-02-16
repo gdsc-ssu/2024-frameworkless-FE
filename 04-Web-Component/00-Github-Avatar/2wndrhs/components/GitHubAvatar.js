@@ -33,4 +33,19 @@ export default class GitHubAvatar extends HTMLElement {
   set user(value) {
     this.setAttribute('user', value);
   }
+
+  render() {
+    window.requestAnimationFrame(() => {
+      this.innerHTML = `
+        <img
+          src="${LOADING_IMAGE}"
+          alt="GitHub Avatar"
+        />
+      `;
+    });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
 }
