@@ -49,6 +49,16 @@ export default class GitHubAvatar extends HTMLElement {
     );
   }
 
+  onAvatarLoadError(error) {
+    this.dispatchEvent(
+      new CustomEvent(AVATAR_LOAD_ERROR, {
+        detail: {
+          error,
+        },
+      }),
+    );
+  }
+
   render() {
     window.requestAnimationFrame(() => {
       this.innerHTML = `<img src="${this.url}" alt="GitHub Avatar" />`;
@@ -61,6 +71,7 @@ export default class GitHubAvatar extends HTMLElement {
       this.onAvatarLoadComplete();
     } catch (error) {
       this.url = ERROR_IMAGE;
+      this.onAvatarLoadError(error);
     }
 
     this.render();
