@@ -31,6 +31,10 @@ export default class GitHubAvatar extends HTMLElement {
     this.url = LOADING_IMAGE;
   }
 
+  static get observedAttributes() {
+    return ['user'];
+  }
+
   get user() {
     return this.getAttribute('user');
   }
@@ -80,5 +84,11 @@ export default class GitHubAvatar extends HTMLElement {
   connectedCallback() {
     this.render();
     this.loadAvatar();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.loadAvatar();
+    }
   }
 }
