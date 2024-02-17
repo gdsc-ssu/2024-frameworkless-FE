@@ -18,6 +18,7 @@ const getGitHubAvatarUrl = async (user) => {
   const url = `https://api.github.com/users/${user}`;
 
   const response = await fetch(url); /// response 받을때까지 기다림
+  console.log(response);
   if (!response.ok) {
     throw new Error(response.statusText);
   }
@@ -49,25 +50,6 @@ export default class GitHubAvatar extends HTMLElement {
     });
   }
 
-  onLoadAvatartComplete() {
-    const event = new CustomEvent(AVATAR_LOAD_COMPLETE, {
-      detail: {
-        avatar: this.url,
-      },
-    });
-    this.dipatchEvent(event);
-  }
-
-  onLoadAvatartError(error) {
-    const event = new CustomEvent(AVATAR_LOAD_ERROR, {
-      detail: {
-        error,
-      },
-    });
-
-    this.dispatchEvent(event);
-  }
-
   async loadNewAvatar() {
     const { user } = this;
 
@@ -77,13 +59,32 @@ export default class GitHubAvatar extends HTMLElement {
 
     try {
       this.url = await getGitHubAvatarUrl(user);
-      this.onLoadAvatartComplete();
+      this.onLoadAvatarComplete();
     } catch (e) {
       this.url = ERROR_IMAGE;
-      this.onLoadAvatartError(e);
+      this.onLoadAvatarError(e);
     }
 
     this.render();
+  }
+
+  onLoadAvatarComplete() {
+    const event = new CustomEvent(AVATAR_LOAD_COMPLETE, {
+      detail: {
+        avatar: this.url,
+      },
+    });
+    this.dispatchEvent(event);
+  }
+
+  onLoadAvatarError(error) {
+    const event = new CustomEvent(AVATAR_LOAD_ERROR, {
+      detail: {
+        error,
+      },
+    });
+
+    this.dispatchEvent(event);
   }
 
   // connectedCallback 요소가 문서에 추가될 때마다 호출
