@@ -55,8 +55,10 @@ export default class GitHubAvatar extends HTMLElement {
     }
     try {
       this.url = await getGitHubAvatarUrl(user);
+      this.onLoadAvatarComplete();
     } catch (e) {
       this.url = ERROR_IMAGE;
+      this.onLoadAvatarError(e);
     }
     this.render();
   }
@@ -64,5 +66,24 @@ export default class GitHubAvatar extends HTMLElement {
   connectedCallback() {
     this.render();
     this.loadNewAvatar();
+  }
+
+  onLoadAvatarComplete() {
+    const event = new CustomEvent(AVATAR_LOAD_COMPLETE, {
+      detail: {
+        avatar: this.url,
+      },
+    });
+
+    this.dispatchEvent(event);
+  }
+
+  onLoadAvatarError(error) {
+    const event = new CustomEvent(AVATAR_LOAD_ERROR, {
+      detail: {
+        error,
+      },
+    });
+    this.dispatchEvent(event);
   }
 }
