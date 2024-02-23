@@ -25,4 +25,44 @@ const getGitHubAvatarUrl = async (user) => {
   return data.avatar_url;
 };
 
-export default class GitHubAvatar extends HTMLElement {}
+export default class GitHubAvatar extends HTMLElement {
+  constructor() {
+    super();
+    this.url = LOADING_IMAGE;
+  }
+
+  get user() {
+    return this.getAttribute('user');
+  }
+
+  set user(value) {
+    this.setAttribute('user', value);
+  }
+
+  render() {
+    window.requestAnimationFrame(() => {
+      this.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = this.url;
+      this.appendChild(img);
+    });
+  }
+
+  async loadNewAvatar() {
+    const { user } = this;
+    if (!user) {
+      return;
+    }
+    try {
+      this.url = await getGitHubAvatarUrl(user);
+    } catch (e) {
+      this.url = ERROR_IMAGE;
+    }
+    this.render();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadNewAvatar();
+  }
+}
